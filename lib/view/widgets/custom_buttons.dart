@@ -5,12 +5,12 @@ class WhiteCustomButton extends StatelessWidget {
     super.key,
     required this.text,
     required this.width,
-    required this.icon,
+    this.icon,
   });
 
   double width;
   String text;
-  IconData icon;
+  IconData? icon;
 
   @override
   Widget build(BuildContext context) {
@@ -30,23 +30,35 @@ class WhiteCustomButton extends StatelessWidget {
       onPressed: () {},
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            icon,
-            color: Colors.blue,
-          ),
-          SizedBox(
-            width: 8,
-          ),
-          Text(
-            text,
-            style: TextStyle(
-                color: Colors.black, fontSize: 16, fontWeight: FontWeight.w500),
-          ),
-          SizedBox(
-            width: 12,
-          ),
-        ],
+        children: icon != null
+            ? [
+                Icon(
+                  icon,
+                  color: Colors.blue,
+                ),
+                SizedBox(
+                  width: 8,
+                ),
+                Text(
+                  text,
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
+                ),
+                SizedBox(
+                  width: 12,
+                ),
+              ]
+            : [
+                Text(
+                  text,
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
+                ),
+              ],
       ),
     );
   }
