@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gymawi/view/add_exercise_screen.dart';
+import 'package:gymawi/view/new_routine_screen.dart';
 import 'package:gymawi/view/workout_screen.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: AddExerciseScreen(),
+      home: NewRoutineScreen(),
     );
   }
 }
